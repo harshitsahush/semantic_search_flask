@@ -1,0 +1,4 @@
+chroma.sqlite3
+synthetic_data.json
+training_data.spacy
+outputs/

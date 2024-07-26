@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic search</title>
+    <style>
+        img{
+            max-height: 200px;
+        }
+
+        table, td, tr, th{
+            border : 3px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Semantic Search</h1>
+    <form action="/sem_search" method = "POST">
+        <p>
+            Enter Query : 
+            <input type="text" name="query" value="" autofocus required>
+            <input type="submit">
+        </p>
+
+        {%if res%}
+        <p>
+            <table>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Image</th>
+                    <th>Product Price</th>
+                </tr>
+                {%for ele in res%}
+                <tr>
+                    <td>{{ele.name}}</td>
+                    <td><img src={{ele.img_url}}></img></td>
+                    <td>{{ele.price}}</td>
+                </tr>   
+                {%endfor%}
+            </table>
+        </p>
+        {%endif%}
+        
+    </form>
+</body>
+</html>
