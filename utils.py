@@ -74,3 +74,24 @@ def process_query(query):
     #now convert sim_docs tp list of dicts
     #each dict containing: product_name, price, photo_url
     return sim_docs["metadatas"][0]
+
+
+def html_table(data):
+    #take in a list of dicts, and outputs code for html table
+    temp = """<table>
+                <tr>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>Price</th>
+                </tr>"""
+    
+    for ele in data:
+        temp += f"""<tr>
+                        <td>{ele["name"]}</td>
+                        <td><img src = "{ele["img_url"]}"></img></td>
+                        <td>{ele["price"]}</td>
+                    </tr>"""
+    
+    temp += "</table>"
+    return temp
+        

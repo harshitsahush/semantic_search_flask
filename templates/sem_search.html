@@ -15,35 +15,19 @@
             padding: 10px;
         }
     </style>
+    <script src = "https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+    <script src = "/static/main.js"></script>
+
 </head>
 <body>
     <h1>Semantic Search</h1>
-    <form action="/sem_search" method = "POST">
-        <p>
-            Enter Query : 
-            <input type="text" name="query" value="" autofocus required>
-            <input type="submit">
-        </p>
+    <p>
+        Enter Query : 
+        <input type="text" name="query" value="" id = "query_box" autofocus autocomplete="off">
+    </p>
 
-        {%if res%}
-        <p>
-            <table>
-                <tr>
-                    <th>Product Name</th>
-                    <th>Product Image</th>
-                    <th>Product Price</th>
-                </tr>
-                {%for ele in res%}
-                <tr>
-                    <td>{{ele.name}}</td>
-                    <td><img src={{ele.img_url}}></img></td>
-                    <td>{{ele.price}}</td>
-                </tr>   
-                {%endfor%}
-            </table>
-        </p>
-        {%endif%}
-        
-    </form>
+    <p id = "response">
+        <!-- for response from the flask api -->
+    </p>
 </body>
 </html>
