@@ -4,30 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Semantic search</title>
-    <style>
-        img{
-            max-height: 200px;
-        }
-
-        table, td, tr, th{
-            border : 3px solid black;
-            border-collapse: collapse;
-            padding: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="/static/styles.css">
     <script src = "https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
     <script src = "/static/main.js"></script>
 
 </head>
 <body>
-    <h1>Semantic Search</h1>
-    <p>
-        Enter Query : 
-        <input type="text" name="query" value="" id = "query_box" autofocus autocomplete="off">
-    </p>
+    <div class="container">
+        <h1 class="heading">Semantic Search</h1>
+        <div class="search-box">
+            <input type="text" placeholder="Type your search..." class="search-input" name="query" value="" id = "query_box" autofocus autocomplete="off">
+        </div>
 
-    <p id = "response">
-        <!-- for response from the flask api -->
-    </p>
+        <div id="response">
+            
+        </div>
+    </div>
 </body>
 </html>
